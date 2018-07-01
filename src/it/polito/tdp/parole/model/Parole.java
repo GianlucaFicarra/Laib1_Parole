@@ -11,17 +11,19 @@ import java.util.List;
 
 public class Parole {
 	
-	//List<String> listaParole= new LinkedList<String>();
-	List<String> listaParole= new ArrayList<String>();
+	List<String> listaParole;
 	
 	public Parole() {
+		listaParole= new ArrayList<String>();
+		//lista = new LinkedList<String>();
 	}
 
 	public void addParola(String p) {
+	   if(!listaParole.contains(p))
 	   listaParole.add(p);
 	}
 	
-	public List<String> getElenco() {
+	public List<String> getElenco() { //l'elenco di parole lo voglio in ordine alfabetico
 		Collections.sort(listaParole, new ComparatoreAlfabetico());
 		return listaParole;
 	}
